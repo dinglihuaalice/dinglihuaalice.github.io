@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>大话数据结构读书笔记 | ALICE DING&#39;S BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="美国畅销书《如何阅读一本书》中提到“阅读可以是一件主动的事，阅读越主动，效果越好。拿同样的书给背景相近的两个人阅读，一个人却比另一个人从书中得到了更多，这是因为，首先在于这人的主动，其次，在于他在阅读中的每一种活动都参与了更多的技巧。这两件事是息息相关的。阅读是一个复杂的活动，就跟写作一样，包含了大量不同的活动。要达成良好的阅读，这些活动都是不可或缺的。一个人越能良好运作这些活动，阅读的效果越好。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大话数据结构读书笔记">
+<meta property="og:url" content="http://dinglihuaalice.github.io/2017/09/14/dataStructure/index.html">
+<meta property="og:site_name" content="ALICE DING&#39;S BLOG">
+<meta property="og:description" content="美国畅销书《如何阅读一本书》中提到“阅读可以是一件主动的事，阅读越主动，效果越好。拿同样的书给背景相近的两个人阅读，一个人却比另一个人从书中得到了更多，这是因为，首先在于这人的主动，其次，在于他在阅读中的每一种活动都参与了更多的技巧。这两件事是息息相关的。阅读是一个复杂的活动，就跟写作一样，包含了大量不同的活动。要达成良好的阅读，这些活动都是不可或缺的。一个人越能良好运作这些活动，阅读的效果越好。">
+<meta property="og:updated_time" content="2017-09-18T16:09:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="大话数据结构读书笔记">
+<meta name="twitter:description" content="美国畅销书《如何阅读一本书》中提到“阅读可以是一件主动的事，阅读越主动，效果越好。拿同样的书给背景相近的两个人阅读，一个人却比另一个人从书中得到了更多，这是因为，首先在于这人的主动，其次，在于他在阅读中的每一种活动都参与了更多的技巧。这两件事是息息相关的。阅读是一个复杂的活动，就跟写作一样，包含了大量不同的活动。要达成良好的阅读，这些活动都是不可或缺的。一个人越能良好运作这些活动，阅读的效果越好。">
+  
+    <link rel="alternate" href="/atom.xml" title="ALICE DING&#39;S BLOG" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ALICE DING&#39;S BLOG</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dinglihuaalice.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-dataStructure" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/14/dataStructure/" class="article-date">
+  <time datetime="2017-09-14T07:37:09.000Z" itemprop="datePublished">2017-09-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      大话数据结构读书笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>美国畅销书《如何阅读一本书》中提到“阅读可以是一件主动的事，阅读越主动，效果越好。拿同样的书给背景相近的两个人阅读，一个人却比另一个人从书中得到了更多，这是因为，首先在于这人的主动，其次，在于他在阅读中的每一种活动都参与了更多的技巧。这两件事是息息相关的。阅读是一个复杂的活动，就跟写作一样，包含了大量不同的活动。要达成良好的阅读，这些活动都是不可或缺的。一个人越能良好运作这些活动，阅读的效果越好。”</em></p>
+<p>#数据结构：是相互之间存在一种或多种特定关系的数据元素的集合</p>
+<p>#具体问题-数据模型-算法-程序</p>
+<p>#数据元素：是组成数据的、有一定意义的基本单位，在计算机中通常作为整体处理。也被称为记录。</p>
+<p>#数据项：一个数据元素可以由若干个数据项组成，数据项是数据不可分割的最小单位。但是数据元素才是数据结构中建立数据模型的着眼点！！！</p>
+<p>#数据对象：是性质相同的数据元素的集合，是数据的子集。</p>
+<p>#按照视点不同，数据结构可以分为逻辑结构和物理结构。</p>
+<p>##逻辑结构：是指数据对象中数据元素之间的相互关系。</p>
+<ul><br><li>集合结构：集合结构中的数据元素除了同属于一个集合外，它们之间没有其他关系。</li><br><li>线性结构：线性结构中的数据元素之间是一对一的关系。</li><br><li>树形结构：树形结构中的数据元素之间存在一种一对多的层次关系。</li><br><li>图形结构：图形结构的数据元素是多对多的关系。</li><br></ul><br>##物理结构：是指数据的逻辑结构在计算机中的存储形式。也成为存储结构。<br><strong>数据的存储结构应正确反映数据元素之间的逻辑关系，这是最关键的！！！</strong><br><ul><br><li>顺序存储：是把数据元素存放在地址连续的存储单元中，其数据间的逻辑关系和物理关系是一致的。</li><br><li>链式存储：是把数据元素存放在任意的存储单元里，这组存储单元可以是连续的，也可以是不连续的。数据元素的存储关系并不能反映其逻辑关系，因此需要用一个指针存放数据元素的地址，这样可以通过地址找到相关联数据元素的位置。</li><br></ul><br>#数据类型：是指一组性质相同的值的集合及定义此集合上的一些操作的总称。<br>##抽象数据类型ADT：是指一个数学模型及定义在该模型上的一组操作。一个ADT定义了：一个数据对象、数据对象中各数据元素之间的关系及对数据元素的操作。<br>##ADT体现了程序设计中问题分解、抽象和信息隐藏的特性。<br><br>##ADT的标准格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">ADT  抽象数据类型名</div><div class="line">Data</div><div class="line">      数据元素之间逻辑关系的定义</div><div class="line">Operation</div><div class="line">    操作1</div><div class="line">        初始条件</div><div class="line">        操作结果描述</div><div class="line">    操作2</div><div class="line">        ...</div><div class="line">    操作n</div><div class="line">        ...</div><div class="line">endADT</div></pre></td></tr></table></figure><br><br><em>算法：算法是解决特定问题求解步骤的描述，在计算机中表现为指令的有限序列，并且每条指令表示一个或多个操作。</em><br><br><em>算法的五个基本特性</em><br><ul><br><li>输入：零个或多个输入</li><br><li>输出：至少有一个输出</li><br><li>有穷性</li><br><li>确定性</li><br><li>可行性</li><br></ul>
+
+<p><strong>可读性、健壮性（即对于不合法的输入数据，也能进行相关处理，而不是产生异常或莫名奇妙的结果）、时间效率、存储量，以上是衡量好的算法的几项标准。</strong><br><strong>事前分析估算方法</strong></p>
+<p><ul></ul></p>
+<p><li>1.算法采用的策略、方法</li></p>
+<p><li>2.编译产生的代码质量</li></p>
+<p><li>3.问题的输入规模</li></p>
+<p><li>4.机器执行指令的速度</li><br><br><strong>抛开与硬件、软件有关的因素，一个程序的运行时间，依赖于算法的好坏和问题的输入规模，所谓问题输入规模是指输入量的多少。</strong><br><strong>测定运行时间最可靠的方法就是计算对运行时间有消耗的基本操作的执行次数，基本操作的数量必须表示成输入规模的函数。</strong><br><strong>判断一个算法的效率时，函数中的常数和其他次要项常常可以忽略，而更应该关注主项（最高阶项）的阶数</strong></p>
+<p><strong>算法的时间复杂度:在进行算法分析时，语句的执行次数T(n)是关于问题规模n的函数，进而分析T(n)随n的变化情况并确定T(n)数量级。算法的时间复杂度，也就是算法的时间量度，记作：T(n)=O(f(n))。它表示随问题规模n的增大，算法执行时间的增长率和f(n)的增长率相同，称作算法的渐进时间复杂度，简称为时间复杂度。其中f(n)是问题规模n的某个函数。</strong></p>
+<p><strong>循环的时间复杂度等于循环体的复杂度乘以该循环运行的次数。</strong></p>
+<p><em>O(1)&lt;O(n)&lt;O(logn)&lt;O(nlogn)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n)</em></p>
+<p><strong>线性表(List)：零个或多个数据元素的有限序列。</strong></p>
+<p><strong>线性表元素的个数n(n&gt;=0)定义为线性表的长度，当n=0时，称为空表。</strong><br><strong>线性表的顺序存储结构：指的是用一段地址连续的存储单元依次存储线性表的数据元素。</strong><br><strong>既然线性表的每个数据元素的类型都相同，我们就可以用一维数组来实现顺序存储结构。</strong><br><strong>实现线性表的顺序存储结构，需要描述顺序存储结构的三个属性</strong></p>
+<p><ul></ul></p>
+<p><li>存储空间的起始位置</li></p>
+<p><li>线性表的最大存储容量：数组长度maxSize</li></p>
+<p><li>线性表的当前长度：length</li><br><br><strong>插入算法的思路</strong></p>
+<p><ul></ul></p>
+<p><li>如果插入位置不合理，抛出异常；</li></p>
+<p><li>如果线性表长度大于等于数组长度，则抛出异常或动态增加容量；</li></p>
+<p><li>从最后一个元素开始向前遍历到第i个位置，分别将它们都向后移动一个位置；</li></p>
+<p><li>将要插入的元素填入位置i处；</li></p>
+<p><li>表长加1；</li><br><br><strong>删除算法的思路</strong></p>
+<p><ul></ul></p>
+<p><li>如果删除位置不合适，抛出异常；</li></p>
+<p><li>取出删除元素；</li></p>
+<p><li>从删除元素位置开始遍历到最后一个元素，分别将它们都向前移动一个位置；</li></p>
+<p><li>表长减1；</li><br><br><strong>线性表顺序存储结构的优缺点：</strong></p>
+<p><strong>优点</strong></p>
+<p><ul></ul></p>
+<p><li>无须为表示表中元素之间的逻辑关系而增加额外的存储空间</li></p>
+<p><li>可以快速地存取表中任一位置的元素，因此也叫随机存取结构</li><br><br><strong>缺点</strong></p>
+<p><ul></ul></p>
+<p><li>插入和删除操作需要移动大量元素</li></p>
+<p><li>当线性表长度变化较大时，难以确定存储空间的容量</li></p>
+<p><li>造成存储空间的“碎片”</li><br><br><strong>在顺序结构中，我们只需要存储数据元素信息就可以，但是在链式结构中，除了存放数据元素信息外，还要存储它的后继元素的存储地址。</strong></p>
+<p><ul></ul></p>
+<p><li>数据域：存储数据元素信息的域</li></p>
+<p><li>指针域：存储直接后继位置的域，指针域中存储的信息称作指针或链。</li><br><br><strong>以上两部分信息组成数据元素的存储映像，称为结点(Node)</strong><br><strong>n个结点链结成一个链表，即为线性表的链式存储结构，因为此链表的每个结点只包含一个指针域，因此称为单链表。</strong></p>
+<p><strong>单链表的插入和删除都是由两部分组成：第一部分是：遍历查找第i个元素；第二部分是插入和删除元素</strong></p>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dinglihuaalice.github.io/2017/09/14/dataStructure/" data-id="cj7rk7xmz00023l5t7ox2bgio" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/16/javaJDK7学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          javaJDK7学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/13/reactNote/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ReactNote</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/09/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/19/SQL学习笔记/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/16/javaJDK7学习笔记/">javaJDK7学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/14/dataStructure/">大话数据结构读书笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/13/reactNote/">ReactNote</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Alice Ding<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

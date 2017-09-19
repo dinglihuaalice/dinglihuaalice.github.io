@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ALICE DING&#39;S BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768select sum(column_name)from table_name;select count(column_name)from tabl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ALICE DING&#39;S BLOG">
+<meta property="og:url" content="http://dinglihuaalice.github.io/2017/09/19/SQL学习笔记/index.html">
+<meta property="og:site_name" content="ALICE DING&#39;S BLOG">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768select sum(column_name)from table_name;select count(column_name)from tabl">
+<meta property="og:updated_time" content="2017-09-19T09:21:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ALICE DING&#39;S BLOG">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768select sum(column_name)from table_name;select count(column_name)from tabl">
+  
+    <link rel="alternate" href="/atom.xml" title="ALICE DING&#39;S BLOG" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ALICE DING&#39;S BLOG</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dinglihuaalice.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-SQL学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/19/SQL学习笔记/" class="article-date">
+  <time datetime="2017-09-19T06:15:37.000Z" itemprop="datePublished">2017-09-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line">select sum(column_name)</div><div class="line">from table_name;</div><div class="line"></div><div class="line">select count(column_name)</div><div class="line">from table_name;</div><div class="line"></div><div class="line">select svg(column_name)</div><div class="line">from table_name;</div><div class="line"></div><div class="line">select min(column_name)</div><div class="line">from table_name;</div><div class="line"></div><div class="line">select max(column_name)</div><div class="line">from table_name;</div><div class="line"></div><div class="line">//column constraint=table constraint</div><div class="line"></div><div class="line">create table Promotions(</div><div class="line">id int,</div><div class="line">name varchar(50) not null unique,</div><div class="line">category varchar(15)</div><div class="line">);</div><div class="line"></div><div class="line">create table Promotions(</div><div class="line">id int,</div><div class="line">name varchar(50) not null ,</div><div class="line">category varchar(15),</div><div class="line">constraint unique_name unique (name)</div><div class="line">);</div><div class="line">//foregin key</div><div class="line"></div><div class="line">create movies(</div><div class="line">id int primary key,</div><div class="line">title varvhar(50) not null unique</div><div class="line">);</div><div class="line"></div><div class="line"></div><div class="line">create tablepromotions(</div><div class="line">id int primarykey,</div><div class="line">movie_id int references movies(id),</div><div class="line">name varchar(50),</div><div class="line">category varvhar(15)</div><div class="line">);</div><div class="line">//the same thing</div><div class="line">create tablepromotions(</div><div class="line">id int primarykey,</div><div class="line">movie_id int references movies,</div><div class="line">name varchar(50),</div><div class="line">category varvhar(15)</div><div class="line">);</div><div class="line">//the same thing</div><div class="line">create tablepromotions(</div><div class="line">id int primarykey,</div><div class="line">movie_id int references movies,</div><div class="line">name varchar(50),</div><div class="line">category varvhar(15),</div><div class="line">foreign key (movie_id) references movies</div><div class="line">);</div><div class="line"></div><div class="line"></div><div class="line">//注意orphan records的产生 当从被引用表中删除数据 但引用表中却没有删除数据，就会产生orphan records，必须同时删除两个表中的数据。</div><div class="line"></div><div class="line">create table movies(</div><div class="line">id int primary key,</div><div class="line">title varchar(20) not null unique,</div><div class="line">genre varchar(100),</div><div class="line">duration int check(duration&gt;0)</div><div class="line">);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dinglihuaalice.github.io/2017/09/19/SQL学习笔记/" data-id="cj7rk7xmv00013l5tf7lvery1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/19/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/16/javaJDK7学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">javaJDK7学习笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/09/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/19/SQL学习笔记/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/16/javaJDK7学习笔记/">javaJDK7学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/14/dataStructure/">大话数据结构读书笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/13/reactNote/">ReactNote</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Alice Ding<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

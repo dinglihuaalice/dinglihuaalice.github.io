@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>javaJDK7学习笔记 | ALICE DING&#39;S BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#java本身会有很多为了节省资源而作的设计，像是动态加载类别文档、字符串池，这是因为java一开始就是为了消费性数字产品而设计的，而这类小型装置通常有着有限内存与运算资源。 JVM是Java程序唯一认识的操作系统，其可执行文件是.class文档。 java是个高级语言，要让计算机执行你撰写的程序，也得通过compiler，但是java编译时，不是直接编译成二进制，而是翻译成中介格式的位码=.cl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaJDK7学习笔记">
+<meta property="og:url" content="http://dinglihuaalice.github.io/2017/09/16/javaJDK7学习笔记/index.html">
+<meta property="og:site_name" content="ALICE DING&#39;S BLOG">
+<meta property="og:description" content="#java本身会有很多为了节省资源而作的设计，像是动态加载类别文档、字符串池，这是因为java一开始就是为了消费性数字产品而设计的，而这类小型装置通常有着有限内存与运算资源。 JVM是Java程序唯一认识的操作系统，其可执行文件是.class文档。 java是个高级语言，要让计算机执行你撰写的程序，也得通过compiler，但是java编译时，不是直接编译成二进制，而是翻译成中介格式的位码=.cl">
+<meta property="og:updated_time" content="2017-09-17T09:06:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javaJDK7学习笔记">
+<meta name="twitter:description" content="#java本身会有很多为了节省资源而作的设计，像是动态加载类别文档、字符串池，这是因为java一开始就是为了消费性数字产品而设计的，而这类小型装置通常有着有限内存与运算资源。 JVM是Java程序唯一认识的操作系统，其可执行文件是.class文档。 java是个高级语言，要让计算机执行你撰写的程序，也得通过compiler，但是java编译时，不是直接编译成二进制，而是翻译成中介格式的位码=.cl">
+  
+    <link rel="alternate" href="/atom.xml" title="ALICE DING&#39;S BLOG" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ALICE DING&#39;S BLOG</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dinglihuaalice.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-javaJDK7学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/16/javaJDK7学习笔记/" class="article-date">
+  <time datetime="2017-09-16T08:56:40.000Z" itemprop="datePublished">2017-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javaJDK7学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#java本身会有很多为了节省资源而作的设计，像是动态加载类别文档、字符串池，这是因为java一开始就是为了消费性数字产品而设计的，而这类小型装置通常有着有限内存与运算资源。</p>
+<p><strong>JVM是Java程序唯一认识的操作系统，其可执行文件是.class文档。</strong></p>
+<p><strong>java是个高级语言，要让计算机执行你撰写的程序，也得通过compiler，但是java编译时，不是直接编译成二进制，而是翻译成中介格式的位码=.class，而JVM会把位码文件翻译成机器码。</strong></p>
+<p><em>.java-&gt;.class</em></p>
+<p><strong>文档撰写时需要注意的几点：</strong></p>
+<ul><br><li>扩展名必须为.java</li><br><li>主文档名必须与类名称相同</li><br><li>java对大小写敏感</li><br><li>空格只能是半角字符或者tab，不能是全角空格</li><br></ul><br><strong>java规定，所有的代码都要定义在类中，class前面有个pulic关键词，表明其是公开类，一个.java只能有一个公开类。</strong><br><strong>程序执行的起点就是程序进入点，java程序的起点就是main()</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">public static void main(String[] args)</div></pre></td></tr></table></figure><br><br><strong>main()方法是public成员，表示可以被JVM公开执行，static表示JVM不用生成类实例就可以被调用</strong><br><br><em>.java必须编译为.class，才可以在JVM中执行，java的编译程序工具程序是javac。javac放在jdk的bin文件下</em><br><br><br><strong><br>Mac配置环境变量的地方<br> 1./etc/profile   （建议不修改这个文件 ）<br> 全局（公有）配置，不管是哪个用户，登录时都会读取该文件。<br><br> 2./etc/bashrc    （一般在这个文件中添加系统级环境变量）<br> 全局（公有）配置，bash shell执行时，不管是何种方式，都会读取此文件。<br><br> 3.~/.bash_profile  （一般在这个文件中添加用户级环境变量）<br> 每个用户都可使用该文件输入专用于自己使用的shell信息,当用户登录时,该文件仅仅执行一次!
+</strong><br><br><br><br><br><br><br><br><br><br><strong>基本上，java可以区分成基本类型和类类型两大类型系统。基本类型，在使用时，需要考虑一下数据用多少内存长度来存比较经济，利用程序语法来告诉JVM，然后JVM自动为你在内存中配置与管理。</strong><br><strong>java中基本类型包括</strong><br><ul><br><li>整数<br><ul><br><li>short（2个字节）</li><br><li>int（4个字节）</li><br><li>long（8个字节）</li><br></ul><br></li><br><li>字节：length为一个字节，在需要逐字节处理数据时（如图像处理、编码处理），就会使用byte类型</li><br><li>浮点数<br><ul><br><li>float</li><br><li>double</li><br></ul><br></li><br><li>字符</li><br><li>布尔</li><br></ul>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">final double number=10;</div><div class="line"></div><div class="line">float PI = 3.14;</div><div class="line">float PI = 3.14F;</div><div class="line">float PI = (float) 3.14;</div></pre></td></tr></table></figure>
+<p><strong>只要有一个类定义，编译程序就会生成一个.class文档。</strong><br><strong>两个基本的标准类：java.util.Scanner;java.math.BigDecimal</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dinglihuaalice.github.io/2017/09/16/javaJDK7学习笔记/" data-id="cj7rk7xn100033l5t3wj9bok5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/19/SQL学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/14/dataStructure/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">大话数据结构读书笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/09/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/19/SQL学习笔记/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/16/javaJDK7学习笔记/">javaJDK7学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/14/dataStructure/">大话数据结构读书笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/13/reactNote/">ReactNote</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Alice Ding<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
